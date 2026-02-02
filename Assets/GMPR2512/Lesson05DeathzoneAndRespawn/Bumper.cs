@@ -11,6 +11,9 @@ namespace GMPR2512.Lesson05DeathzoneAndRespawn
         private bool _isLit = false;
         private Color _originalColour;
         private SpriteRenderer _spriteRenderer;
+        // When a scene loads, Unity runs "Awake" on all game objects that implement it. 
+        // If lag is ever acceptable in a game, it is "on load", so we should put methods that
+        // have the potential to lag in Awake.
         void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -40,6 +43,7 @@ namespace GMPR2512.Lesson05DeathzoneAndRespawn
                         Vector2 direction = (collision.rigidbody.position - (Vector2)transform.position).normalized;
                         normal = direction;
                     }
+                    normal *= -1; // do we have to add this? I think so
                     // Step 3: Calculate an impulse along the normal
                     Vector2 impulse = normal * _bumperForce;
                     // Step 4: Apply as an instantaneous force (ignores mass scaling)
