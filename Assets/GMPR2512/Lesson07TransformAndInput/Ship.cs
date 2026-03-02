@@ -5,7 +5,9 @@ namespace GMPR2512.Lesson07TransformAndInput
 {
     public class Ship : MonoBehaviour
     {
-        [SerializeField] private float _movementSpeed = 5, _rotationSpeed = 500;
+        [SerializeField] private float _movementSpeed = 5, _rotationSpeed = 200;
+        
+        [SerializeField] private float _minRotation = 25, _maxRotation = -25;
 
         private InputAction _moveAction, _rotationAction;
 
@@ -23,9 +25,18 @@ namespace GMPR2512.Lesson07TransformAndInput
             transform.Translate(translation, Space.Self);
 
             float rotationValue = _rotationAction.ReadValue<Vector2>().normalized.y * _rotationSpeed * Time.deltaTime;
-            Debug.Log(rotationValue);
+            transform.Rotate(0, 0, rotationValue);
 
-            //in-class exercise: rotate the ship with the above user input
+            // Clamp rotation
+            Vector3 euler = transform.eulerAngles;
+            // Convert to signed range (-180 to 180)
+            if (euler.z > 180f)
+            {
+                euler.z -= 360f;
+            }
+            // Clamp, then assign back
+            euler.z = Mathf.Clamp(euler.z, _maxRotation, _minRotation);
+            transform.eulerAngles = euler;
 
         }
     }
