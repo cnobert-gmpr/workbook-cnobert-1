@@ -6,6 +6,8 @@ namespace GMPR2512.Lesson05DeathzoneAndRespawn
     public class DeathZone : MonoBehaviour
     {
         [SerializeField] private Transform _spawnPoint;
+        [SerializeField] private  Bumper _bumperScript01, _bumperScript02;
+
         void OnTriggerEnter2D(Collider2D collider2D)
         {
             if(collider2D.gameObject.CompareTag("Ball"))
