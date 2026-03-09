@@ -4,6 +4,7 @@ namespace GMPR2512.Lesson07TransformAndInput
 {
     public class Projectile : MonoBehaviour
     {
+        [SerializeField] private GameObject _explosionTransform;
         private float _speed = 10, _spinVelocity = 0;
         private Vector2 _direction = Vector2.up;
 
@@ -15,6 +16,12 @@ namespace GMPR2512.Lesson07TransformAndInput
         {
             transform.Translate(_direction.normalized * _speed * Time.deltaTime, Space.World);
             transform.Rotate(new Vector3(0, 0, _spinVelocity * Time.deltaTime), Space.World);
+        }
+        void OnTriggerEnter2D(Collider2D collider)
+        {
+            Instantiate(_explosionTransform, collider.transform.position, transform.rotation);
+            Destroy(collider.gameObject);
+            Destroy(gameObject);
         }
     }
 }

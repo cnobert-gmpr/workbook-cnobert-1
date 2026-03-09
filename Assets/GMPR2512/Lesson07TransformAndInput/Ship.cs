@@ -8,6 +8,8 @@ namespace GMPR2512.Lesson07TransformAndInput
         [SerializeField] private float _movementSpeed = 5, _rotationSpeed = 200, _scaleSpeed = 1;
         [SerializeField] private float _minRotation = 25, _maxRotation = -25;
 
+        [SerializeField] private float _projectileSpeed = 5, _projectileSpinVelocity = -2000;
+
         [SerializeField] private GameObject _projectilePrefab;
 
         private InputAction _moveAction, _rotationAction, _scaleAction, _fireAction;
@@ -96,13 +98,14 @@ namespace GMPR2512.Lesson07TransformAndInput
             // declare a "Projectile" variable and make it refer to the script that 
             // is a component of the projectile that we just instantiated
             Projectile projectileScript = theProjectile.GetComponent<Projectile>();
-            projectileScript.Speed = 5;
+            projectileScript.Speed = _projectileSpeed;
             projectileScript.Direction = transform.up;
-            projectileScript.SpinVelocity = -2000;
+            projectileScript.SpinVelocity = _projectileSpinVelocity;;
         }
         private void FireButtonReleased(InputAction.CallbackContext context)
         {
            
         }
+
     }
 }
