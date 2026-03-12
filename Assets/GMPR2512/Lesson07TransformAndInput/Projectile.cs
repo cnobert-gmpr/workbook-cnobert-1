@@ -19,9 +19,12 @@ namespace GMPR2512.Lesson07TransformAndInput
         }
         void OnTriggerEnter2D(Collider2D collider)
         {
-            Instantiate(_explosionTransform, collider.transform.position, transform.rotation);
-            Destroy(collider.gameObject);
-            Destroy(gameObject);
+            if(collider.transform.tag.Equals("Alien"))
+            {
+                Instantiate(_explosionTransform, collider.transform.position, transform.rotation);
+                Destroy(collider.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 }

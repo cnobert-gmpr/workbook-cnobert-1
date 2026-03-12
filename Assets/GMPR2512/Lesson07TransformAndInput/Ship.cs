@@ -100,7 +100,7 @@ namespace GMPR2512.Lesson07TransformAndInput
             Projectile projectileScript = theProjectile.GetComponent<Projectile>();
             projectileScript.Speed = _projectileSpeed;
             projectileScript.Direction = transform.up;
-            projectileScript.SpinVelocity = _projectileSpinVelocity;;
+            projectileScript.SpinVelocity = _projectileSpinVelocity;
         }
         private void FireButtonReleased(InputAction.CallbackContext context)
         {
