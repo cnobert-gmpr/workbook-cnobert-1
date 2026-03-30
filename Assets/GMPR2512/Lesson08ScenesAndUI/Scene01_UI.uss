@@ -1,0 +1,59 @@
+.screen-wrapper {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: #312121; 
+}
+
+/* Widened the grid to accommodate the bigger buttons */
+.grid-container {
+    width: 820px; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.mc-button {
+    /* Significantly larger dimensions */
+    width: 380px;
+    height: 80px;
+    margin-bottom: 20px;
+    
+    background-color: #AAAAAA;
+    color: white;
+    
+    /* Bigger text for the bigger button */
+    font-size: 32px;
+    -unity-font-style: bold;
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: black;
+    
+    /* Thicker borders for a chunkier feel */
+    border-left-width: 4px;
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    
+    border-left-color: #FFFFFF;
+    border-top-color: #FFFFFF;
+    border-right-color: #000000;
+    border-bottom-color: #000000;
+    border-radius: 0;
+}
+
+.mc-button:hover {
+    background-color: #7BA4FF;
+    border-color: #FFFFFF;
+    border-right-color: #000000;
+    border-bottom-color: #000000;
+}
+
+.mc-button:active {
+    /* Flip the colors to simulate the button being pressed down */
+    border-left-color: #000000;
+    border-top-color: #000000;
+    border-right-color: #FFFFFF;
+    border-bottom-color: #FFFFFF;
+    /* Move the text slightly down for a physical "click" feel */
+    padding-top: 4px; 
+}
