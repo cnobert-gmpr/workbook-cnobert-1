@@ -437,6 +437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 223926930}
   - component: {fileID: 223926929}
+  - component: {fileID: 223926931}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -482,6 +483,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &223926931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223926928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3d3feb3a4dd4229ab81a49516bcb6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GMPR2512.Lesson08ScenesAndUI::GMPR2512.Lesson08ScenesAndUI.Scene02_UI
+  _gameState: {fileID: 11400000, guid: 72d859ad0dd474647975ce5a6d45c4b0, type: 2}
 --- !u!1 &244244776
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,13 +12,13 @@ namespace GMPR2512.Lesson08ScenesAndUI
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
             _scoreLevel01 = root.Q<Label>("label-score");
-            _scoreLevel01.text = _gameState.ScoreLevel01.ToString();
+            _scoreLevel01.text = $"Score {_gameState.ScoreLevel01.ToString()}";
         }
 
         // Update is called once per frame
         void Update()
         {
-            _scoreLevel01.text = _gameState.ScoreLevel01.ToString();
+            _scoreLevel01.text = $"Score {_gameState.ScoreLevel01.ToString()}";
         }
     }
 }
