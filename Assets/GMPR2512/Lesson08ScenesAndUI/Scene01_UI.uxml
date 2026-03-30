@@ -9,7 +9,7 @@
 
     <ui:VisualElement class="screen-wrapper">
         <ui:VisualElement class="grid-container">
-            <ui:Button text="SINGLEPLAYER" class="mc-button" />
+            <ui:Button name="buttonOpenScene02" text="SINGLEPLAYER" class="mc-button" />
             <ui:Button text="MULTIPLAYER" class="mc-button" />
             <ui:Button text="OPTIONS..." class="mc-button" />
             <ui:Button text="QUIT GAME" class="mc-button" />
